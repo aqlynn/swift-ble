@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		364664111E38A46E00524F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364664101E38A46E00524F91 /* Main.storyboard */; };
 		367066171E38821F00B90C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066161E38821F00B90C5B /* AppDelegate.swift */; };
 		367066191E38821F00B90C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066181E38821F00B90C5B /* ViewController.swift */; };
-		3670661C1E38821F00B90C5B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3670661A1E38821F00B90C5B /* Main.storyboard */; };
 		3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670661D1E38821F00B90C5B /* Assets.xcassets */; };
 		367066211E38821F00B90C5B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3670661F1E38821F00B90C5B /* LaunchScreen.storyboard */; };
 		3670662C1E38821F00B90C5B /* bledemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670662B1E38821F00B90C5B /* bledemoTests.swift */; };
 		367066371E38821F00B90C5B /* bledemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066361E38821F00B90C5B /* bledemoUITests.swift */; };
+		3670664D1E38884800B90C5B /* HexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670664C1E38884800B90C5B /* HexUtil.swift */; };
+		367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066501E389A0000B90C5B /* ConnectBleViewController.swift */; };
+		367066531E389C5600B90C5B /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066521E389C5600B90C5B /* BatteryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,10 +37,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		364664101E38A46E00524F91 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		367066131E38821F00B90C5B /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066161E38821F00B90C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367066181E38821F00B90C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3670661B1E38821F00B90C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3670661D1E38821F00B90C5B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		367066201E38821F00B90C5B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		367066221E38821F00B90C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -47,6 +50,10 @@
 		367066321E38821F00B90C5B /* bledemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = bledemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066361E38821F00B90C5B /* bledemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bledemoUITests.swift; sourceTree = "<group>"; };
 		367066381E38821F00B90C5B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		367066461E38855F00B90C5B /* bledemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "bledemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		3670664C1E38884800B90C5B /* HexUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexUtil.swift; sourceTree = "<group>"; };
+		367066501E389A0000B90C5B /* ConnectBleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectBleViewController.swift; path = ../ConnectBleViewController.swift; sourceTree = "<group>"; };
+		367066521E389C5600B90C5B /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +104,16 @@
 		367066151E38821F00B90C5B /* bledemo */ = {
 			isa = PBXGroup;
 			children = (
+				3670664C1E38884800B90C5B /* HexUtil.swift */,
 				367066161E38821F00B90C5B /* AppDelegate.swift */,
+				364664101E38A46E00524F91 /* Main.storyboard */,
+				367066501E389A0000B90C5B /* ConnectBleViewController.swift */,
 				367066181E38821F00B90C5B /* ViewController.swift */,
-				3670661A1E38821F00B90C5B /* Main.storyboard */,
 				3670661D1E38821F00B90C5B /* Assets.xcassets */,
+				367066521E389C5600B90C5B /* BatteryView.swift */,
 				3670661F1E38821F00B90C5B /* LaunchScreen.storyboard */,
 				367066221E38821F00B90C5B /* Info.plist */,
+				367066461E38855F00B90C5B /* bledemo-Bridging-Header.h */,
 			);
 			path = bledemo;
 			sourceTree = "<group>";
@@ -194,6 +205,7 @@
 					367066121E38821F00B90C5B = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = 97DJTM743Q;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					367066261E38821F00B90C5B = {
@@ -235,9 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364664111E38A46E00524F91 /* Main.storyboard in Resources */,
 				367066211E38821F00B90C5B /* LaunchScreen.storyboard in Resources */,
 				3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */,
-				3670661C1E38821F00B90C5B /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +275,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				367066191E38821F00B90C5B /* ViewController.swift in Sources */,
+				367066531E389C5600B90C5B /* BatteryView.swift in Sources */,
+				367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */,
+				3670664D1E38884800B90C5B /* HexUtil.swift in Sources */,
 				367066171E38821F00B90C5B /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,14 +314,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		3670661A1E38821F00B90C5B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3670661B1E38821F00B90C5B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3670661F1E38821F00B90C5B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -413,11 +420,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 97DJTM743Q;
 				INFOPLIST_FILE = bledemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lxk.bledemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bledemo/bledemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -426,11 +436,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 97DJTM743Q;
 				INFOPLIST_FILE = bledemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lxk.bledemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "bledemo/bledemo-Bridging-Header.h";
+				"SWIFT_OPTIMIZATION_LEVEL[arch=*]" = "-Owholemodule";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -512,6 +525,7 @@
 				3670663D1E38821F00B90C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3670663E1E38821F00B90C5B /* Build configuration list for PBXNativeTarget "bledemoTests" */ = {
 			isa = XCConfigurationList;
@@ -520,6 +534,7 @@
 				367066401E38821F00B90C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		367066411E38821F00B90C5B /* Build configuration list for PBXNativeTarget "bledemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -528,6 +543,7 @@
 				367066431E38821F00B90C5B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
