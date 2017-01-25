@@ -235,6 +235,10 @@
                             <constraint firstItem="tgo-o2-nvf" firstAttribute="top" secondItem="f82-YX-W6c" secondAttribute="bottom" constant="7" id="zzP-sO-iTR"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="image" destination="tgo-o2-nvf" id="knJ-Sk-89j"/>
+                        <outlet property="labelFunction" destination="Rj5-64-1g0" id="bGE-fO-aJt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDQ-Ad-Pi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
