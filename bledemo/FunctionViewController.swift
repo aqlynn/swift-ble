@@ -11,10 +11,9 @@ import UIKit
 class FunctionViewController: UIViewController {
     
     var type:Int!
-    @IBOutlet weak var labelType: UILabel!
-    override func viewDidLoad() {
+        override func viewDidLoad() {
         super.viewDidLoad()
-        labelType.text=String(type)
+
 
         // Do any additional setup after loading the view.
     }
