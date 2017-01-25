@@ -17,6 +17,21 @@ class ViewController: UIViewController {
 
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let identifier = segue.identifier {
+            var vc:FunctionViewController = segue.destination as! FunctionViewController
+            switch identifier {
+            case "child":
+                vc.type = 0;
+            case "lost":
+                 vc.type = 1;
+            case "rob":
+                  vc.type = 2;
+            default: break
+            }
+        }
+    }
+    
     
 
 

@@ -29,14 +29,23 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lW0-o4-Vtp">
                                         <rect key="frame" x="0.0" y="0.0" width="188" height="30"/>
                                         <state key="normal" title="儿童安全系统"/>
+                                        <connections>
+                                            <segue destination="afr-cj-tys" kind="show" identifier="child" id="KQQ-jJ-ihQ"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-jX-Q6s">
                                         <rect key="frame" x="0.0" y="30" width="188" height="30"/>
                                         <state key="normal" title="防丢系统"/>
+                                        <connections>
+                                            <segue destination="afr-cj-tys" kind="show" identifier="lost" id="i9H-QB-XTU"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-PQ-wuW">
                                         <rect key="frame" x="0.0" y="60" width="188" height="30"/>
                                         <state key="normal" title="防盗系统"/>
+                                        <connections>
+                                            <segue destination="afr-cj-tys" kind="show" identifier="rob" id="wTy-I3-POe"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b14-L4-1hc">
                                         <rect key="frame" x="0.0" y="90" width="188" height="30"/>
@@ -97,7 +106,37 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1C-Uh-7eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1766" y="-401"/>
+            <point key="canvasLocation" x="1782" y="-1236"/>
+        </scene>
+        <!--Function View Controller-->
+        <scene sceneID="yVX-6f-jER">
+            <objects>
+                <viewController id="afr-cj-tys" customClass="FunctionViewController" customModule="bledemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ot9-oo-MdS"/>
+                        <viewControllerLayoutGuide type="bottom" id="FHd-oh-wMG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="R8V-Jh-OEy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvJ-qP-Qk3">
+                                <rect key="frame" x="152" y="199" width="42" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="labelType" destination="MvJ-qP-Qk3" id="VJH-El-RaQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dDQ-Ad-Pi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1781.5999999999999" y="-552.77361319340332"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sAL-ns-UuI">
@@ -118,4 +157,7 @@
             <point key="canvasLocation" x="117.59999999999999" y="-590.55472263868069"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="wTy-I3-POe"/>
+    </inferredMetricsTieBreakers>
 </document>

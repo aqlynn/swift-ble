@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		364664111E38A46E00524F91 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 364664101E38A46E00524F91 /* Main.storyboard */; };
+		364664131E38BD3C00524F91 /* FunctionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364664121E38BD3B00524F91 /* FunctionViewController.swift */; };
+		364664151E38C4AB00524F91 /* GlobalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364664141E38C4AB00524F91 /* GlobalParams.swift */; };
 		367066171E38821F00B90C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066161E38821F00B90C5B /* AppDelegate.swift */; };
 		367066191E38821F00B90C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066181E38821F00B90C5B /* ViewController.swift */; };
 		3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670661D1E38821F00B90C5B /* Assets.xcassets */; };
@@ -38,6 +40,8 @@
 
 /* Begin PBXFileReference section */
 		364664101E38A46E00524F91 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		364664121E38BD3B00524F91 /* FunctionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunctionViewController.swift; sourceTree = "<group>"; };
+		364664141E38C4AB00524F91 /* GlobalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalParams.swift; sourceTree = "<group>"; };
 		367066131E38821F00B90C5B /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066161E38821F00B90C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367066181E38821F00B90C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			children = (
 				3670664C1E38884800B90C5B /* HexUtil.swift */,
 				367066161E38821F00B90C5B /* AppDelegate.swift */,
+				364664141E38C4AB00524F91 /* GlobalParams.swift */,
 				364664101E38A46E00524F91 /* Main.storyboard */,
 				367066501E389A0000B90C5B /* ConnectBleViewController.swift */,
 				367066181E38821F00B90C5B /* ViewController.swift */,
@@ -114,6 +119,7 @@
 				3670661F1E38821F00B90C5B /* LaunchScreen.storyboard */,
 				367066221E38821F00B90C5B /* Info.plist */,
 				367066461E38855F00B90C5B /* bledemo-Bridging-Header.h */,
+				364664121E38BD3B00524F91 /* FunctionViewController.swift */,
 			);
 			path = bledemo;
 			sourceTree = "<group>";
@@ -274,6 +280,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				364664131E38BD3C00524F91 /* FunctionViewController.swift in Sources */,
+				364664151E38C4AB00524F91 /* GlobalParams.swift in Sources */,
 				367066191E38821F00B90C5B /* ViewController.swift in Sources */,
 				367066531E389C5600B90C5B /* BatteryView.swift in Sources */,
 				367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */,
