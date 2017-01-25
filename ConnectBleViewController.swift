@@ -141,7 +141,13 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
     }
     
     deinit {
-        self.myCentralManager.cancelPeripheralConnection(myPeripheral);
+        if(Global.isConnected){
+            self.myCentralManager.cancelPeripheralConnection(myPeripheral);
+            Global.isConnected=false;
+
+        }
+        
+        
     }
     
     
@@ -238,6 +244,7 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         bg.isHidden=true
         batteryView.center = self.view.center
         batteryView.isHidden=false
+        Global.isConnected=true;
     }
     
     

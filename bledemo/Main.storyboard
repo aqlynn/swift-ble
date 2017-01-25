@@ -24,33 +24,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="eEi-FH-vmV">
-                                <rect key="frame" x="80" y="224" width="160" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eEi-FH-vmV">
+                                <rect key="frame" x="16" y="64" width="288" height="414"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lW0-o4-Vtp">
-                                        <rect key="frame" x="0.0" y="0.0" width="160" height="30"/>
-                                        <state key="normal" title="儿童安全系统"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="103.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="儿童安全系统">
+                                            <color key="titleColor" red="0.1300491988658905" green="0.9880022321428571" blue="0.43373745679855347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="afr-cj-tys" kind="show" identifier="child" id="KQQ-jJ-ihQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1xC-jX-Q6s">
-                                        <rect key="frame" x="0.0" y="30" width="160" height="30"/>
-                                        <state key="normal" title="防丢系统"/>
+                                        <rect key="frame" x="0.0" y="103.5" width="288" height="103.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="防丢系统">
+                                            <color key="titleColor" red="0.12941176470588234" green="0.9882352941176471" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="afr-cj-tys" kind="show" identifier="lost" id="i9H-QB-XTU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MLA-PQ-wuW">
-                                        <rect key="frame" x="0.0" y="60" width="160" height="30"/>
-                                        <state key="normal" title="防盗系统"/>
+                                        <rect key="frame" x="0.0" y="207" width="288" height="103.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <state key="normal" title="防盗系统">
+                                            <color key="titleColor" red="0.12941176470588234" green="0.9882352941176471" blue="0.49019607843137253" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="afr-cj-tys" kind="show" identifier="rob" id="wTy-I3-POe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b14-L4-1hc">
-                                        <rect key="frame" x="0.0" y="90" width="160" height="30"/>
-                                        <state key="normal" title="连接设备"/>
+                                        <rect key="frame" x="0.0" y="310.5" width="288" height="103.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <state key="normal" title="连接设备">
+                                            <color key="titleColor" red="0.12941176470588234" green="0.9882352941176471" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
                                         <connections>
                                             <segue destination="8BM-t2-rTN" kind="show" id="lnv-OJ-xQi"/>
                                         </connections>
@@ -75,13 +87,14 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="IdY-Ky-iUU" firstAttribute="top" secondItem="eEi-FH-vmV" secondAttribute="bottom" constant="50" id="4LN-Iy-yHt"/>
                             <constraint firstItem="IdY-Ky-iUU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9mt-Ma-E1J"/>
-                            <constraint firstItem="eEi-FH-vmV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Imw-J8-9xq"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eEi-FH-vmV" secondAttribute="trailing" id="H3z-8P-75P"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="IdY-Ky-iUU" secondAttribute="bottom" id="KGE-gk-KA8"/>
-                            <constraint firstItem="eEi-FH-vmV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="SbD-ib-zG3"/>
-                            <constraint firstItem="eEi-FH-vmV" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="1:2" id="iov-Xk-1e6"/>
+                            <constraint firstItem="eEi-FH-vmV" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="eCZ-xn-1Og"/>
+                            <constraint firstItem="eEi-FH-vmV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="gdh-db-9lu"/>
                             <constraint firstAttribute="trailingMargin" secondItem="IdY-Ky-iUU" secondAttribute="trailing" id="oad-E7-d1j"/>
                         </constraints>
                     </view>
@@ -217,7 +230,7 @@
                                 <rect key="frame" x="80" y="110" width="160" height="145.5"/>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.13305556774139404" green="0.33471775054931641" blue="0.47005856037139893" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f82-YX-W6c" firstAttribute="top" secondItem="ot9-oo-MdS" secondAttribute="bottom" constant="10" id="0Sc-be-aeV"/>
                             <constraint firstItem="l8y-08-M2y" firstAttribute="top" secondItem="tgo-o2-nvf" secondAttribute="bottom" constant="8" id="Gll-eb-zC7"/>
