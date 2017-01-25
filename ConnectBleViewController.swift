@@ -54,7 +54,7 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         
         open.setTitle("打开", for: UIControlState())
         //设置按钮的点击事件
-        //open.isHidden=true
+        open.isHidden=true
         
         open.addTarget(self, action: #selector(ConnectBleViewController.buttonTag(_:)), for: UIControlEvents.touchUpInside)
         open.tag = 10
@@ -100,10 +100,16 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
 
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print("扫描设备。。。。 ");
+        myCentralManager.scanForPeripherals(withServices: nil, options: nil)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+                // Dispose of any resources that can be recreated.
     }
     
 
