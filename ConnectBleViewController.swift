@@ -20,34 +20,31 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
     var WRITERCHARUUID:String = "6E400002-B5A3-F393-E0A9-E50E24DCCA9E"
     var READCHARUUID:String = "6E400003-B5A3-F393-E0A9-E50E24DCCA9E"
     
+    @IBOutlet weak var labelBle: UILabel!
+    @IBOutlet weak var labelPower: UILabel!
+    
+    var batteryView: BatteryView!
     
     //发送获取数据的指令
     var SECRETKEY:String = "938E0400080410"
     var getbytes :[UInt8]    = [0x55, 0x05, 0x05, 0x00, 0x00]
+    @IBOutlet weak var bg: UIImageView!
     /// 存储最终拼到一起的结果
     var result:String = ""
     
     var lable:UILabel!
     
-    
-    var batteryView : BatteryView!;
-   
-    
-
+    @IBOutlet weak var labelRssi: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         myCentralManager = CBCentralManager()
         myCentralManager.delegate = self
-        
-        
-        batteryView = BatteryView(frame: CGRect(x: 200, y: 350, width: 50, height: 90))
-         batteryView.level = 0 // anywhere in 0...100
+        batteryView = BatteryView(frame: CGRect(x: 140, y: 30, width: 62, height: 120))
+        batteryView.level = 0 // anywhere in 0...100
         batteryView.lowThreshold = 20
+        batteryView.isHidden=true
+        labelRssi.isHidden=true
         view.addSubview(batteryView)
-
-
-       
-       
 
         let  open:UIButton = UIButton()
         open.backgroundColor = UIColor.blue
@@ -57,6 +54,8 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         
         open.setTitle("打开", for: UIControlState())
         //设置按钮的点击事件
+        //open.isHidden=true
+        
         open.addTarget(self, action: #selector(ConnectBleViewController.buttonTag(_:)), for: UIControlEvents.touchUpInside)
         open.tag = 10
         self.view.addSubview(open)
@@ -72,6 +71,7 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         //设置按钮的点击事件
         open1.addTarget(self, action: #selector(ConnectBleViewController.buttonTag(_:)), for: UIControlEvents.touchUpInside)
         open1.tag = 20
+        open1.isHidden=true
         self.view.addSubview(open1)
         
         let rect = CGRect(x: 10, y: 220, width: 280, height: 30)
@@ -89,8 +89,13 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         lable.textColor = UIColor.purple//紫色
         //设置标签的背景颜色为黄色
         lable.backgroundColor = UIColor.yellow
+        lable.isHidden=true
+        labelPower.isHidden=true;
         
         self.view.addSubview(lable)
+        
+//        print("扫描设备。。。。 ");
+//        myCentralManager.scanForPeripherals(withServices: nil, options: nil)
 
 
         // Do any additional setup after loading the view.
@@ -203,6 +208,8 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
             self.myCentralManager = central;
             central.connect(self.myPeripheral, options: nil)
             print(self.myPeripheral);
+             labelRssi.isHidden=false
+            labelRssi.text="rssi:"+RSSI.stringValue
         }
         
     }
@@ -217,6 +224,10 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         self.myPeripheral.delegate = self
         self.myPeripheral.discoverServices(nil)
         print("扫描服务...");
+        labelBle.text = "蓝牙连接成功"
+        bg.isHidden=true
+        batteryView.center = self.view.center
+        batteryView.isHidden=false
     }
     
     
@@ -264,6 +275,8 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
                 self.writeCharacteristic = c
             }
         }
+        
+        writeToPeripheral(getbytes)
     }
     
     
@@ -317,9 +330,13 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
             print(data)
             let  d  = Array(UnsafeBufferPointer(start: (data as NSData).bytes.bindMemory(to: UInt8.self, capacity: data.count), count: data.count))
             print(d)
-    
+            guard d.count>3 else {
+                return
+            }
             if(d[2]==04){
-                 batteryView.level = Int(d[3]) // anywhere in 0...100
+                labelPower.isHidden=false;
+                labelPower.text="电量:\(Int(d[3]))%"
+                 batteryView.level = Int(d[3])
             }
            
             let s:String =  HexUtil.encodeToString(d)

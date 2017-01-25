@@ -101,12 +101,60 @@
                     <view key="view" contentMode="scaleToFill" id="Bmy-nc-kvl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="蓝牙连接中" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bCS-Am-nJO">
+                                <rect key="frame" x="21" y="84" width="333" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8" translatesAutoresizingMaskIntoConstraints="NO" id="hLe-2W-fCj">
+                                <rect key="frame" x="16" y="119" width="343" height="417"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xjk-8d-OYZ">
+                                <rect key="frame" x="16" y="140" width="343" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KLZ-Or-73V">
+                                <rect key="frame" x="16" y="526" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="GYf-XX-Lf3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bCS-Am-nJO" firstAttribute="top" secondItem="LfK-CS-5Jr" secondAttribute="bottom" constant="20" id="78W-iN-jcA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="KLZ-Or-73V" secondAttribute="trailing" id="CzE-aC-Sb0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hLe-2W-fCj" secondAttribute="trailing" id="D5D-6w-aoo"/>
+                            <constraint firstItem="hLe-2W-fCj" firstAttribute="leading" secondItem="Bmy-nc-kvl" secondAttribute="leadingMargin" id="QQC-o6-SDK"/>
+                            <constraint firstItem="bCS-Am-nJO" firstAttribute="leading" secondItem="Bmy-nc-kvl" secondAttribute="leadingMargin" constant="5" id="SdP-vF-Gv4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bCS-Am-nJO" secondAttribute="trailing" constant="5" id="Uu9-VZ-su0"/>
+                            <constraint firstItem="hLe-2W-fCj" firstAttribute="top" secondItem="bCS-Am-nJO" secondAttribute="bottom" id="VxE-Oa-cKx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Xjk-8d-OYZ" secondAttribute="trailing" id="bdG-RM-MF5"/>
+                            <constraint firstItem="hLe-2W-fCj" firstAttribute="height" secondItem="Bmy-nc-kvl" secondAttribute="height" multiplier="1:1.6" id="cHp-q0-Yca"/>
+                            <constraint firstItem="oPv-q5-dcL" firstAttribute="top" secondItem="KLZ-Or-73V" secondAttribute="bottom" constant="120" id="gAA-ic-zSs"/>
+                            <constraint firstItem="Xjk-8d-OYZ" firstAttribute="centerX" secondItem="Bmy-nc-kvl" secondAttribute="centerX" id="ngm-21-H42"/>
+                            <constraint firstItem="Xjk-8d-OYZ" firstAttribute="top" secondItem="bCS-Am-nJO" secondAttribute="bottom" constant="21" id="oPv-zZ-zQw"/>
+                            <constraint firstItem="Xjk-8d-OYZ" firstAttribute="leading" secondItem="Bmy-nc-kvl" secondAttribute="leadingMargin" id="rj8-Iv-6yb"/>
+                            <constraint firstItem="KLZ-Or-73V" firstAttribute="leading" secondItem="Bmy-nc-kvl" secondAttribute="leadingMargin" id="zAa-bj-Eho"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="bg" destination="hLe-2W-fCj" id="JDo-dL-7Ah"/>
+                        <outlet property="labelBle" destination="bCS-Am-nJO" id="0oV-ee-kLS"/>
+                        <outlet property="labelPower" destination="KLZ-Or-73V" id="Yb2-gG-dJu"/>
+                        <outlet property="labelRssi" destination="Xjk-8d-OYZ" id="wAM-BP-I3E"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1C-Uh-7eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1782" y="-1236"/>
+            <point key="canvasLocation" x="1781.5999999999999" y="-1236.4317841079462"/>
         </scene>
         <!--Function View Controller-->
         <scene sceneID="yVX-6f-jER">
@@ -157,6 +205,9 @@
             <point key="canvasLocation" x="117.59999999999999" y="-590.55472263868069"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="8" width="360" height="430"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="wTy-I3-POe"/>
     </inferredMetricsTieBreakers>
