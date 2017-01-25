@@ -18,12 +18,17 @@ class FunctionViewController: UIViewController {
             if(type==1){
                  labelFunction.text="防丢系统"
                  image.image=UIImage(named: "1")
+                self.navigationItem.title="防丢系统"
+        
             }else if(type==2){
                 labelFunction.text="防盗系统"
                 image.image=UIImage(named: "3")
+                self.navigationItem.title="防盗系统"
+
             }else if(type==0){
                 labelFunction.text="儿童安全"
                 image.image=UIImage(named: "2")
+                self.navigationItem.title="儿童安全"
             }
 
 
