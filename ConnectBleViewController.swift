@@ -93,9 +93,7 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         labelPower.isHidden=true;
         
         self.view.addSubview(lable)
-        
-//        print("扫描设备。。。。 ");
-//        myCentralManager.scanForPeripherals(withServices: nil, options: nil)
+
 
 
         // Do any additional setup after loading the view.
@@ -128,10 +126,13 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         case 10:
             print("扫描设备。。。。 ");
             myCentralManager.scanForPeripherals(withServices: nil, options: nil)
+            
+            
+            //self.myCentralManager.cancelPeripheralConnection(myPeripheral);
             break
         case 20:
             //向设备发送指令
-            writeToPeripheral(getbytes)
+        writeToPeripheral(getbytes)
             break
         default:
             break
@@ -139,6 +140,9 @@ class ConnectBleViewController: UIViewController,CBCentralManagerDelegate,CBPeri
         
     }
     
+    deinit {
+        self.myCentralManager.cancelPeripheralConnection(myPeripheral);
+    }
     
     
     /**
