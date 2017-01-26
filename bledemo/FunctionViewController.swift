@@ -12,6 +12,7 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     var bleSingleton: BleSingleton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var labelFunction: UILabel!
+    @IBOutlet weak var bleStatus: UILabel!
     var type:Int!
         override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,12 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
                 image.image=UIImage(named: "2")
                 self.navigationItem.title="儿童安全"
             }
+            
+            if(Global.isConnected){
+                bleStatus.text = "设备已连接"
+            }else{
+                bleStatus.text = "设备未连接"
+            }
 
 
         // Do any additional setup after loading the view.
@@ -47,7 +54,12 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     }
     
     func rssi(rssi: NSNumber) {
-       
+    
+        if(Global.isConnected){
+            bleStatus.text = "设备已连接 rssi:\(rssi.stringValue)"
+        }else{
+            bleStatus.text = "设备未连接 rssi:\(rssi.stringValue)"
+        }
     }
     
     func connected() {
