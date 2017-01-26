@@ -12,7 +12,7 @@ class Global
 {
     static var power = 0
     static var isConnected: Bool = false
-    static var label: String = "Alarm"
+    static var rssi: NSNumber = 0
     static var weekdays: [Int] = [Int]()
     static var mediaLabel: String = "bell"
     static var snoozeEnabled: Bool = false
