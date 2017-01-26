@@ -57,8 +57,6 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     
         if(Global.isConnected){
             bleStatus.text = "设备已连接 rssi:\(rssi.stringValue)"
-        }else{
-            bleStatus.text = "设备未连接"
         }
     }
     
