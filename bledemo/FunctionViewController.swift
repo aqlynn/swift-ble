@@ -63,10 +63,11 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     }
     
     func connected() {
-        
+        bleStatus.text = "设备已连接"
     }
     
     func disconnected() {
+        bleStatus.text = "设备已断开"
          bleSingleton.connectBle();
     }
 
