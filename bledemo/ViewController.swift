@@ -87,8 +87,5 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     
 
 
-
-
-
 }
 

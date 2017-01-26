@@ -68,6 +68,19 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         self.delegate?.rssi(rssi: RSSI)
         print("读到rssi \(RSSI)");
         
+        
+//        guard(!Global.isOnAlarm)else{
+//            return
+//        }
+//        Global.isOnAlarm=true
+//        
+//        
+//        let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+//        vc2.type="儿童安全 当前rssi:\(Global.rssi)"
+//        //跳转
+//        vc.navigationController?.pushViewController( vc2, animated: true)
+
+        
     }
     
     /**
