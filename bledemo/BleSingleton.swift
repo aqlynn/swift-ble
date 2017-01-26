@@ -66,6 +66,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         self.delegate?.rssi(rssi: RSSI)
+        print("读到rssi \(RSSI)");
 
     }
     
@@ -210,7 +211,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
             }
         }
          writeToPeripheral(getbytes)
-        Timer.scheduledTimer(withTimeInterval: 5,
+        Timer.scheduledTimer(withTimeInterval: 7,
                              repeats: true,
                              block: { (timer) in
                                 if(Global.isConnected){
