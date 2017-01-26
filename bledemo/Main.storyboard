@@ -293,6 +293,51 @@
             </objects>
             <point key="canvasLocation" x="1781" y="-553"/>
         </scene>
+        <!--Alarm View Controller-->
+        <scene sceneID="7n2-9R-rbQ">
+            <objects>
+                <viewController storyboardIdentifier="alarm" id="JPw-w7-9yD" customClass="AlarmViewController" customModule="bledemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GIF-m3-Acf"/>
+                        <viewControllerLayoutGuide type="bottom" id="rIH-Pr-f0B"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pxO-oe-Vdm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7" translatesAutoresizingMaskIntoConstraints="NO" id="FEf-3F-7PK">
+                                <rect key="frame" x="16" y="65" width="288" height="503"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="警报类型" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vKw-Co-VPs">
+                                <rect key="frame" x="32" y="32" width="288" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="jnq-PY-um8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="vKw-Co-VPs" firstAttribute="top" secondItem="GIF-m3-Acf" secondAttribute="bottom" constant="20" id="AYM-iw-YUm"/>
+                            <constraint firstItem="rIH-Pr-f0B" firstAttribute="top" secondItem="FEf-3F-7PK" secondAttribute="bottom" id="CK5-Ur-H8G"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FEf-3F-7PK" secondAttribute="trailing" id="GHa-HK-Zb3"/>
+                            <constraint firstItem="FEf-3F-7PK" firstAttribute="top" secondItem="vKw-Co-VPs" secondAttribute="bottom" id="Jnc-dt-5fg"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="vKw-Co-VPs" secondAttribute="trailing" id="KTn-yq-mgW"/>
+                            <constraint firstItem="vKw-Co-VPs" firstAttribute="centerX" secondItem="pxO-oe-Vdm" secondAttribute="centerX" id="fvr-7y-cme"/>
+                            <constraint firstItem="vKw-Co-VPs" firstAttribute="leading" secondItem="pxO-oe-Vdm" secondAttribute="leadingMargin" id="jp0-14-xGd"/>
+                            <constraint firstItem="FEf-3F-7PK" firstAttribute="leading" secondItem="pxO-oe-Vdm" secondAttribute="leadingMargin" id="ySz-rN-ftG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="alarmName" destination="vKw-Co-VPs" id="Abv-Tn-hzk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BGB-NQ-4ez" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="-1237"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sAL-ns-UuI">
             <objects>
@@ -314,6 +359,7 @@
     </scenes>
     <resources>
         <image name="3" width="172" height="185"/>
+        <image name="7" width="360" height="415"/>
         <image name="8" width="360" height="430"/>
     </resources>
     <inferredMetricsTieBreakers>

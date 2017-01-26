@@ -37,6 +37,7 @@ class ConnectBleViewController: UIViewController,BleSingletonDelegate {
         
         bleSingleton = BleSingleton.shareBleSingleton()
         self.bleSingleton.delegate = self
+        self.bleSingleton.vc = self
         labelPower.isHidden=true
 
         if(Global.isConnected){

@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,BleSingletonDelegate  {
     
     @IBOutlet weak var btn0: UIButton!
     @IBOutlet weak var btn1: UIButton!
     @IBOutlet weak var btn2: UIButton!
     @IBOutlet weak var btn3: UIButton!
-
+    var bleSingleton: BleSingleton!
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="首页"
@@ -39,9 +39,19 @@ class ViewController: UIViewController {
         btn3.layer.masksToBounds = true;
         btn3.layer.borderWidth = 1.0;
         btn3.layer.borderColor = UIColor.green.cgColor
+        
+        bleSingleton = BleSingleton.shareBleSingleton()
+    
+        self.bleSingleton.delegate = self
 
 
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.bleSingleton.vc = self
+    }
+    
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             let vc:FunctionViewController = segue.destination as! FunctionViewController
@@ -55,6 +65,23 @@ class ViewController: UIViewController {
             default: break
             }
         }
+    }
+    
+    func power(power: Int) {
+        
+    }
+    
+    func rssi(rssi: NSNumber) {
+        Global.rssi=rssi;
+       
+    }
+    
+    func connected() {
+       
+    }
+    
+    func disconnected() {
+        bleSingleton.connectBle();
     }
     
     

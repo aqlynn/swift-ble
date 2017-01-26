@@ -44,18 +44,25 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
 
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.bleSingleton.vc = self
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     func power(power: Int) {
         
     }
     
     func rssi(rssi: NSNumber) {
-    
+        Global.rssi=rssi;
         if(Global.isConnected){
             bleStatus.text = "设备已连接 rssi:\(rssi.stringValue)"
         }

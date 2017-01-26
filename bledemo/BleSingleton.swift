@@ -16,7 +16,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     
     // weak类型，防止循环引用
     weak var delegate: BleSingletonDelegate?
-    
+    var vc:UIViewController!
     var  myCentralManager:CBCentralManager!
     var  myPeripheral:CBPeripheral!
     var writeCharacteristic:CBCharacteristic!
@@ -67,7 +67,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         self.delegate?.rssi(rssi: RSSI)
         print("读到rssi \(RSSI)");
-
+        
     }
     
     /**
@@ -279,10 +279,33 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
             }else if(d[2]==02){
                 //acceleration
                 print("----翻动异常---")
+                guard(!Global.isOnAlarm)else{
+                    return
+                }
+                Global.isOnAlarm=true
+                
+            
+                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+                vc2.type="防盗系统 当前rssi:\(Global.rssi)"
+                //跳转
+                vc.navigationController?.pushViewController( vc2, animated: true)
+
 
             }else if(d[1]==01){
                 //button
                 print("----蓝牙按键---")
+            
+                guard(!Global.isOnAlarm)else{
+                    return
+                }
+                Global.isOnAlarm=true
+                
+                
+                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+                vc2.type="儿童安全 当前rssi:\(Global.rssi)"
+                //跳转
+                vc.navigationController?.pushViewController( vc2, animated: true)
+
             }
             
             
