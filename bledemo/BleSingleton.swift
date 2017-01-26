@@ -67,7 +67,22 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
     func peripheral(_ peripheral: CBPeripheral, didReadRSSI RSSI: NSNumber, error: Error?) {
         self.delegate?.rssi(rssi: RSSI)
         print("读到rssi \(RSSI)");
+        Global.alarmType=1
+        Global.rssi=RSSI
+        guard Int(RSSI.stringValue)! < -70 else {
+            return
+        }
         
+        let AlarmNotification: UILocalNotification = UILocalNotification()
+        AlarmNotification.alertBody = "防丢警报"
+        AlarmNotification.alertAction = "打开App"
+        AlarmNotification.category = "防丢警报"
+        AlarmNotification.soundName = "bell.mp3"
+        AlarmNotification.timeZone = TimeZone.current
+        AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+        UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+        
+
         
 //        guard(!Global.isOnAlarm)else{
 //            return
@@ -291,17 +306,25 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
                  self.delegate?.power(power: Int(d[3]))
             }else if(d[2]==02){
                 //acceleration
+                
                 print("----翻动异常---")
                 guard(!Global.isOnAlarm)else{
                     return
                 }
+                Global.alarmType=2
                 Global.isOnAlarm=true
-                
+                let AlarmNotification: UILocalNotification = UILocalNotification()
+                AlarmNotification.alertBody = "防盗警报"
+                AlarmNotification.alertAction = "打开App"
+                AlarmNotification.category = "防盗警报"
+                AlarmNotification.timeZone = TimeZone.current
+                AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+                UIApplication.shared.scheduleLocalNotification(AlarmNotification)
             
-                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
-                vc2.type="防盗系统 当前rssi:\(Global.rssi)"
-                //跳转
-                vc.navigationController?.pushViewController( vc2, animated: true)
+//                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+//                vc2.type="防盗系统 当前rssi:\(Global.rssi)"
+//                //跳转
+//                vc.navigationController?.pushViewController( vc2, animated: true)
 
 
             }else if(d[1]==01){
@@ -311,13 +334,20 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
                 guard(!Global.isOnAlarm)else{
                     return
                 }
+                Global.alarmType=0
                 Global.isOnAlarm=true
+                let AlarmNotification: UILocalNotification = UILocalNotification()
+                AlarmNotification.alertBody = "儿童安全警报"
+                AlarmNotification.alertAction = "打开App"
+                AlarmNotification.category = "儿童安全警报"
+                AlarmNotification.timeZone = TimeZone.current
+                AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+                UIApplication.shared.scheduleLocalNotification(AlarmNotification)
                 
-                
-                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
-                vc2.type="儿童安全 当前rssi:\(Global.rssi)"
-                //跳转
-                vc.navigationController?.pushViewController( vc2, animated: true)
+//                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+//                vc2.type="儿童安全 当前rssi:\(Global.rssi)"
+//                //跳转
+//                vc.navigationController?.pushViewController( vc2, animated: true)
 
             }
             

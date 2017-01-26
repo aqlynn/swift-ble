@@ -7,12 +7,13 @@
 //
 
 import UIKit
-
+import AudioToolbox
+import AVFoundation
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
 
     var window: UIWindow?
-
+    var audioPlayer: AVAudioPlayer?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -40,7 +41,81 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
+    
+    //todo,vibration infinity
+    func vibrationCallback(_ id:SystemSoundID, _ callback:UnsafeMutableRawPointer) -> Void
+    {
+        print("callback", terminator: "")
+    }
+    
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully
+        flag: Bool) {
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer,
+                                        error: Error?) {
+    }
+    
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
+    }
+    
+    //AlarmApplicationDelegate protocol
+    func playAlarmSound() {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        let url = URL(
+            fileURLWithPath: Bundle.main.path(forResource: "bell", ofType: "mp3")!)
+        
+        var error: NSError?
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+        } catch let error1 as NSError {
+            error = error1
+            audioPlayer = nil
+        }
+        
+        if let err = error {
+            print("audioPlayer error \(err.localizedDescription)")
+        } else {
+            audioPlayer!.delegate = self
+            audioPlayer!.prepareToPlay()
+        }
+        //negative number means loop infinity
+        audioPlayer!.numberOfLoops = -1
+        audioPlayer!.play()
+    }
+    
+    func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        //
+        //if app is in foreground, show a alert
+        var s:String!
+        if(Global.alarmType==0){
+            s="儿童警报"
+        }else if(Global.alarmType==1){
+            s="防丢警报 rssi:\(Global.rssi)"
+        }else if(Global.alarmType==2){
+            s="防盗警报"
+        }
+        let storageController = UIAlertController(title: s, message: nil, preferredStyle: .alert)
+        playAlarmSound()
+        let stopOption = UIAlertAction(title: "OK", style: .default) {
+            (action:UIAlertAction)->Void in
+//            guard(!Global.isOnAlarm)else{
+//                return
+//            }
+//            Global.isOnAlarm=true
+//            let vc2 = (UIStoryboard(name: "Main",bundle: nil).instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
+//            vc2.type="儿童安全 当前rssi:\(Global.rssi)"
+//            self.window?.rootViewController!.present(vc2, animated: true, completion: nil)
+            self.audioPlayer?.stop()
+            Global.isOnAlarm=true
+            
+        }
+        storageController.addAction(stopOption)
+        self.window?.rootViewController!.present(storageController, animated: true, completion: nil)
+       }
+    }
 
 
-}
 

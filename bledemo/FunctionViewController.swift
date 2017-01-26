@@ -18,7 +18,6 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
         super.viewDidLoad()
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
-           
             if(type==1){
                  labelFunction.text="防丢系统"
                  image.image=UIImage(named: "1")
