@@ -16,6 +16,7 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     var type:Int!
         override func viewDidLoad() {
         super.viewDidLoad()
+    
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
             if(type==1){
