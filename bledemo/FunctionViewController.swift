@@ -8,13 +8,15 @@
 
 import UIKit
 
-class FunctionViewController: UIViewController {
-    
+class FunctionViewController: UIViewController,BleSingletonDelegate {
+    var bleSingleton: BleSingleton!
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var labelFunction: UILabel!
     var type:Int!
         override func viewDidLoad() {
         super.viewDidLoad()
+            bleSingleton = BleSingleton.shareBleSingleton()
+            self.bleSingleton.delegate = self
             if(type==1){
                  labelFunction.text="防丢系统"
                  image.image=UIImage(named: "1")
@@ -40,7 +42,22 @@ class FunctionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-  
+    func power(power: Int) {
+        
+    }
+    
+    func rssi(rssi: NSNumber) {
+       
+    }
+    
+    func connected() {
+        
+    }
+    
+    func disconnected() {
+         bleSingleton.connectBle();
+    }
+
 
     /*
     // MARK: - Navigation

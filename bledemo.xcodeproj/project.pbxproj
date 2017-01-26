@@ -19,6 +19,7 @@
 		3670664D1E38884800B90C5B /* HexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670664C1E38884800B90C5B /* HexUtil.swift */; };
 		367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066501E389A0000B90C5B /* ConnectBleViewController.swift */; };
 		367066531E389C5600B90C5B /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066521E389C5600B90C5B /* BatteryView.swift */; };
+		3696BAF01E39AA8D002BF100 /* BleSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +59,7 @@
 		3670664C1E38884800B90C5B /* HexUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexUtil.swift; sourceTree = "<group>"; };
 		367066501E389A0000B90C5B /* ConnectBleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectBleViewController.swift; path = ../ConnectBleViewController.swift; sourceTree = "<group>"; };
 		367066521E389C5600B90C5B /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleSingleton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 				367066221E38821F00B90C5B /* Info.plist */,
 				367066461E38855F00B90C5B /* bledemo-Bridging-Header.h */,
 				364664121E38BD3B00524F91 /* FunctionViewController.swift */,
+				3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */,
 			);
 			path = bledemo;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 				364664131E38BD3C00524F91 /* FunctionViewController.swift in Sources */,
 				364664151E38C4AB00524F91 /* GlobalParams.swift in Sources */,
 				367066191E38821F00B90C5B /* ViewController.swift in Sources */,
+				3696BAF01E39AA8D002BF100 /* BleSingleton.swift in Sources */,
 				367066531E389C5600B90C5B /* BatteryView.swift in Sources */,
 				367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */,
 				3670664D1E38884800B90C5B /* HexUtil.swift in Sources */,

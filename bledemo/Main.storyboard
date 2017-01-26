@@ -140,6 +140,26 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ndW-gA-3Dq">
+                                <rect key="frame" x="11" y="157" width="76" height="198"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="disconnect">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="disconnect:" destination="8BM-t2-rTN" eventType="touchUpInside" id="1XU-df-RfO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ln9-Kg-mXn">
+                                <rect key="frame" x="11" y="119" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="connect">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="connect:" destination="8BM-t2-rTN" eventType="touchUpInside" id="LI7-nE-Glr"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -161,6 +181,8 @@
                     </view>
                     <connections>
                         <outlet property="bg" destination="hLe-2W-fCj" id="JDo-dL-7Ah"/>
+                        <outlet property="btnConnect" destination="Ln9-Kg-mXn" id="5RR-SZ-uCs"/>
+                        <outlet property="btnDisconnect" destination="ndW-gA-3Dq" id="JVY-gd-eec"/>
                         <outlet property="labelBle" destination="bCS-Am-nJO" id="0oV-ee-kLS"/>
                         <outlet property="labelPower" destination="KLZ-Or-73V" id="Yb2-gG-dJu"/>
                         <outlet property="labelRssi" destination="Xjk-8d-OYZ" id="wAM-BP-I3E"/>
@@ -168,7 +190,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1C-Uh-7eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1781.5999999999999" y="-1236.4317841079462"/>
+            <point key="canvasLocation" x="1781.25" y="-1236.9718309859154"/>
         </scene>
         <!--Function View Controller-->
         <scene sceneID="yVX-6f-jER">
@@ -281,6 +303,6 @@
         <image name="8" width="360" height="430"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="wTy-I3-POe"/>
+        <segue reference="KQQ-jJ-ihQ"/>
     </inferredMetricsTieBreakers>
 </document>
