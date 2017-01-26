@@ -75,6 +75,7 @@ class ConnectBleViewController: UIViewController,BleSingletonDelegate {
     func rssi(rssi: NSNumber) {
         labelRssi.isHidden=false
         labelRssi.text="rssi:"+rssi.stringValue
+        Global.rssi=rssi;
     }
     
     func connected() {

@@ -17,6 +17,9 @@ class ViewController: UIViewController {
 
     }
     
+
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             let vc:FunctionViewController = segue.destination as! FunctionViewController

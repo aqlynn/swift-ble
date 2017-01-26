@@ -275,10 +275,15 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
             }
             if(d[2]==04){
                  self.delegate?.power(power: Int(d[3]))
-               
+            }else if(d[2]==02){
+                //acceleration
+                print("----翻动异常---")
 
-            
+            }else if(d[1]==01){
+                //button
+                print("----蓝牙按键---")
             }
+            
             
             let s:String =  HexUtil.encodeToString(d)
             print(s)
