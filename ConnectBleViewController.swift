@@ -24,6 +24,7 @@ class ConnectBleViewController: UIViewController,BleSingletonDelegate {
     var bleSingleton: BleSingleton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title="连接设备"
         btnDisconnect.isHidden=true
         btnConnect.isHidden=true
         batteryView = BatteryView(frame: CGRect(x: 140, y: 30, width: 62, height: 120))
