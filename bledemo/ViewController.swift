@@ -32,14 +32,14 @@ class ViewController: UIViewController,BleSingletonDelegate  {
             initBtns()
             if(Global.tuple.isOn)
             {
-                btn0.backgroundColor=UIColor.green
+                btn0.backgroundColor=UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0)
                 btn0.setTitleColor(.white, for: .normal)
             }
         case 1:
              initBtns()
             if(Global.tuple.isOn)
             {
-                btn1.backgroundColor=UIColor.green
+                btn1.backgroundColor=UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0)
                 btn1.setTitleColor(.white, for: .normal)
 
             }
@@ -47,7 +47,7 @@ class ViewController: UIViewController,BleSingletonDelegate  {
             initBtns()
             if(Global.tuple.isOn)
             {
-                btn2.backgroundColor=UIColor.green
+                btn2.backgroundColor=UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0)
                 btn2.setTitleColor(.white, for: .normal)
 
             }
@@ -96,30 +96,29 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     btn0.backgroundColor=nil
     btn0.layer.masksToBounds = true;
     btn0.layer.borderWidth = 1.0;
-    btn0.layer.borderColor = UIColor.green.cgColor
-    btn0.setTitleColor(.green, for: .normal)
+    btn0.layer.borderColor = UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0).cgColor
+    btn0.setTitleColor(UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), for: .normal)
 
     btn1.backgroundColor=nil
     btn1.layer.cornerRadius = 20;
     btn1.layer.masksToBounds = true;
     btn1.layer.borderWidth = 1.0;
-    btn1.layer.borderColor = UIColor.green.cgColor
-    btn1.setTitleColor(.green, for: .normal)
+    btn1.layer.borderColor = UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0).cgColor
+    btn1.setTitleColor(UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), for: .normal)
     
     btn2.backgroundColor=nil
     btn2.layer.cornerRadius = 20;
     btn2.layer.masksToBounds = true;
     btn2.layer.borderWidth = 1.0;
-    btn2.layer.borderColor = UIColor.green.cgColor
-    btn2.setTitleColor(.green, for: .normal)
+    btn2.layer.borderColor = UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0).cgColor
+    btn2.setTitleColor(UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), for: .normal)
     
     btn3.backgroundColor=nil
     btn3.layer.cornerRadius = 20;
     btn3.layer.masksToBounds = true;
     btn3.layer.borderWidth = 1.0;
-    btn3.layer.borderColor = UIColor.green.cgColor
-    btn3.setTitleColor(.green, for: .normal)
-
+    btn3.layer.borderColor = UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0).cgColor
+    btn3.setTitleColor(UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), for: .normal)
     }
 
 }

@@ -62,7 +62,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
     
     //AlarmApplicationDelegate protocol
     func playAlarmSound(name:String,type:String) {
-        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        if(Global.alarmType==0){
+            if(Global.vibrate0){
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+            
+        }else if(Global.alarmType==1){
+            if(Global.vibrate1){
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+        }else if(Global.alarmType==2){
+            if(Global.vibrate2){
+                AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+            }
+        }
+        
         let url = URL(
             fileURLWithPath: Bundle.main.path(forResource: name, ofType: type)!)
         
@@ -80,6 +94,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
         } else {
             audioPlayer!.delegate = self
             audioPlayer!.prepareToPlay()
+            
+            if(Global.alarmType==0){
+               audioPlayer!.volume=Global.volume0
+            }else if(Global.alarmType==1){
+                 audioPlayer!.volume=Global.volume1
+            }else if(Global.alarmType==2){
+                 audioPlayer!.volume=Global.volume2
+                
+            }
         }
         //negative number means loop infinity
         audioPlayer!.numberOfLoops = -1

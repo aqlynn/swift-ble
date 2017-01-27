@@ -19,4 +19,12 @@ class Global
     static var mediaLabel: String = "bell"
     static var snoozeEnabled: Bool = false
     static var tuple: (type:Int,isOn:Bool) = (-1,false)
+    static var volume0:Float = 0.5
+    static var volume1:Float = 0.5
+    static var volume2:Float = 0.5
+    
+    static var vibrate0:Bool = true
+     static var vibrate1:Bool = true
+;     static var vibrate2:Bool = true
+
 }

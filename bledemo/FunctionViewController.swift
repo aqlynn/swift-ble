@@ -16,28 +16,38 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
    
     @IBOutlet weak var funSwitch: UISwitch!
    
+    @IBOutlet weak var volume: UISlider!
     
+    @IBOutlet weak var vibrate: UISwitch!
+
     var type:Int!
     
         override func viewDidLoad() {
         super.viewDidLoad()
-    
+
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
              Global.tuple=(type,true)
             funSwitch.isOn = true;
             funSwitch.addTarget(self, action: #selector(switchDidChange), for:.valueChanged)
+            vibrate.addTarget(self, action: #selector(switchDidChange2), for:.valueChanged)
             if(type==1){
+                vibrate.isOn=Global.vibrate1
+                volume.value=Global.volume1
                  labelFunction.text="防丢系统"
                  image.image=UIImage(named: "1")
                 self.navigationItem.title="防丢系统"
         
             }else if(type==2){
+                 vibrate.isOn=Global.vibrate2
+                volume.value=Global.volume2
                 labelFunction.text="防盗系统"
                 image.image=UIImage(named: "3")
                 self.navigationItem.title="防盗系统"
 
             }else if(type==0){
+                vibrate.isOn=Global.vibrate0
+                 volume.value=Global.volume0
                 labelFunction.text="儿童安全"
                 image.image=UIImage(named: "2")
                 self.navigationItem.title="儿童安全"
@@ -57,10 +67,38 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     
     func switchDidChange(){
         //打印当前值
-        print(funSwitch.isOn)
+       // print(funSwitch.isOn)
         Global.tuple=(type,funSwitch.isOn)
     }
     
+    
+    //vibrate
+    func switchDidChange2(){
+        if(type==1){
+            Global.vibrate1=vibrate.isOn
+        }else if(type==2){
+            Global.vibrate2=vibrate.isOn
+            
+        }else if(type==0){
+           Global.vibrate0=vibrate.isOn
+        }
+    }
+    
+    @IBAction func volumeChanged(_ sender: Any) {
+        let slider:UISlider=sender as! UISlider
+        print(slider.value)
+        if(type==1){
+             Global.volume1=slider.value
+            
+        }else if(type==2){
+            Global.volume2=slider.value
+
+        }else if(type==0){
+            Global.volume0=slider.value
+
+        }
+
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
