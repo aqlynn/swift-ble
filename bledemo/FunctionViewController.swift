@@ -22,15 +22,23 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
 
     var type:Int!
     
+    @IBOutlet weak var strengthStack: UIStackView!
+    @IBOutlet weak var strengchSwitch: DynamicMaskSegmentSwitch!
         override func viewDidLoad() {
         super.viewDidLoad()
 
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
              Global.tuple=(type,true)
+        
+            let configure = DynamicMaskSegmentSwitchConfigure(highlightedColor: UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), normalColor: UIColor.white, items: ["弱","中","强"])
+            strengchSwitch.configure = configure
+            
             funSwitch.isOn = true;
+    
             funSwitch.addTarget(self, action: #selector(switchDidChange), for:.valueChanged)
             vibrate.addTarget(self, action: #selector(switchDidChange2), for:.valueChanged)
+            
             if(type==1){
                 vibrate.isOn=Global.vibrate1
                 volume.value=Global.volume1
@@ -42,13 +50,16 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
                  vibrate.isOn=Global.vibrate2
                 volume.value=Global.volume2
                 labelFunction.text="防盗系统"
+                strengthStack.isHidden=true
                 image.image=UIImage(named: "3")
                 self.navigationItem.title="防盗系统"
+               
 
             }else if(type==0){
                 vibrate.isOn=Global.vibrate0
                  volume.value=Global.volume0
                 labelFunction.text="儿童安全"
+                 strengthStack.isHidden=true
                 image.image=UIImage(named: "2")
                 self.navigationItem.title="儿童安全"
             }
@@ -59,8 +70,9 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
                 bleStatus.text = "设备未连接"
             }
 
-
         // Do any additional setup after loading the view.
+        
+           
     }
     
     
@@ -83,6 +95,8 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
            Global.vibrate0=vibrate.isOn
         }
     }
+    
+   
     
     @IBAction func volumeChanged(_ sender: Any) {
         let slider:UISlider=sender as! UISlider

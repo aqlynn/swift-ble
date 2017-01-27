@@ -17,6 +17,7 @@
 		365C0F2F1E3B97820009EF69 /* cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F2E1E3B97820009EF69 /* cry.mp3 */; };
 		365C0F321E3B979D0009EF69 /* btconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F301E3B979D0009EF69 /* btconnect.wav */; };
 		365C0F331E3B979D0009EF69 /* btdisconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F311E3B979D0009EF69 /* btdisconnect.wav */; };
+		3663EA8C1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663EA8B1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift */; };
 		367066171E38821F00B90C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066161E38821F00B90C5B /* AppDelegate.swift */; };
 		367066191E38821F00B90C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066181E38821F00B90C5B /* ViewController.swift */; };
 		3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670661D1E38821F00B90C5B /* Assets.xcassets */; };
@@ -58,6 +59,7 @@
 		365C0F2E1E3B97820009EF69 /* cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cry.mp3; sourceTree = "<group>"; };
 		365C0F301E3B979D0009EF69 /* btconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btconnect.wav; sourceTree = "<group>"; };
 		365C0F311E3B979D0009EF69 /* btdisconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btdisconnect.wav; sourceTree = "<group>"; };
+		3663EA8B1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicMaskSegmentSwitch.swift; sourceTree = "<group>"; };
 		367066131E38821F00B90C5B /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066161E38821F00B90C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367066181E38821F00B90C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				365C0F2A1E3B976D0009EF69 /* fangdao.mp3 */,
 				365C0F2B1E3B976D0009EF69 /* fangdiu.wav */,
 				365C0F231E3A37C10009EF69 /* tickle.mp3 */,
+				3663EA8B1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift */,
 				365C0F241E3A37C10009EF69 /* bell.mp3 */,
 				3670664C1E38884800B90C5B /* HexUtil.swift */,
 				367066161E38821F00B90C5B /* AppDelegate.swift */,
@@ -328,6 +331,7 @@
 				367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */,
 				3670664D1E38884800B90C5B /* HexUtil.swift in Sources */,
 				367066171E38821F00B90C5B /* AppDelegate.swift in Sources */,
+				3663EA8C1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

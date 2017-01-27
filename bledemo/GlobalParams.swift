@@ -7,7 +7,6 @@
 //
 
 import Foundation
-
 class Global
 {
     static var power = 0
@@ -24,7 +23,10 @@ class Global
     static var volume2:Float = 0.5
     
     static var vibrate0:Bool = true
-     static var vibrate1:Bool = true
-;     static var vibrate2:Bool = true
+    static var vibrate1:Bool = true
+    static var vibrate2:Bool = true
+    
+    static var strength:Float = 0.5
+
 
 }

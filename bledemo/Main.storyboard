@@ -314,15 +314,36 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zln-UI-5Xz">
+                                <rect key="frame" x="15" y="377.5" width="296.5" height="27"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报警信号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjr-cy-PlX">
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="27"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOS-up-N5I" customClass="DynamicMaskSegmentSwitch" customModule="bledemo" customModuleProvider="target">
+                                        <rect key="frame" x="116.5" y="0.0" width="180" height="27"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="27" id="8QX-NR-8L7"/>
+                                            <constraint firstAttribute="width" constant="180" id="WCP-kN-jgD"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="f82-YX-W6c" firstAttribute="top" secondItem="ot9-oo-MdS" secondAttribute="bottom" constant="10" id="0Sc-be-aeV"/>
+                            <constraint firstItem="Zln-UI-5Xz" firstAttribute="top" secondItem="JEi-Zt-i1T" secondAttribute="bottom" constant="8" id="AHl-MX-Pme"/>
                             <constraint firstItem="JEi-Zt-i1T" firstAttribute="top" secondItem="tgo-o2-nvf" secondAttribute="bottom" constant="8" id="CDr-bu-xgn"/>
                             <constraint firstItem="f82-YX-W6c" firstAttribute="leading" secondItem="R8V-Jh-OEy" secondAttribute="leading" constant="13" id="KrO-DQ-5BH"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Xrr-0X-ohK" secondAttribute="bottom" id="TJS-xO-evH"/>
                             <constraint firstItem="tgo-o2-nvf" firstAttribute="width" secondItem="R8V-Jh-OEy" secondAttribute="width" multiplier="4:8" id="YEm-wz-Phu"/>
                             <constraint firstAttribute="trailing" secondItem="JEi-Zt-i1T" secondAttribute="trailing" constant="10" id="Znd-5q-R4k"/>
+                            <constraint firstItem="Zln-UI-5Xz" firstAttribute="leading" secondItem="JEi-Zt-i1T" secondAttribute="leading" id="c4j-mc-EXo"/>
                             <constraint firstItem="Xrr-0X-ohK" firstAttribute="leading" secondItem="R8V-Jh-OEy" secondAttribute="leadingMargin" id="jgV-bs-cE9"/>
                             <constraint firstItem="JEi-Zt-i1T" firstAttribute="leading" secondItem="R8V-Jh-OEy" secondAttribute="leading" constant="15" id="k4L-f2-fjG"/>
                             <constraint firstItem="tgo-o2-nvf" firstAttribute="height" secondItem="R8V-Jh-OEy" secondAttribute="width" multiplier="1:2.2" id="kQq-BO-g2J"/>
@@ -336,6 +357,8 @@
                         <outlet property="funSwitch" destination="dYu-Eh-41m" id="6in-rw-Ax1"/>
                         <outlet property="image" destination="tgo-o2-nvf" id="knJ-Sk-89j"/>
                         <outlet property="labelFunction" destination="Rj5-64-1g0" id="bGE-fO-aJt"/>
+                        <outlet property="strengchSwitch" destination="dOS-up-N5I" id="rXp-LE-odC"/>
+                        <outlet property="strengthStack" destination="Zln-UI-5Xz" id="Kiw-NF-EsZ"/>
                         <outlet property="vibrate" destination="HvZ-rA-VYC" id="X86-ll-mWJ"/>
                         <outlet property="volume" destination="CjG-Na-j5i" id="Rq9-oi-i0w"/>
                     </connections>
@@ -414,6 +437,6 @@
         <image name="8" width="360" height="430"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KQQ-jJ-ihQ"/>
+        <segue reference="i9H-QB-XTU"/>
     </inferredMetricsTieBreakers>
 </document>
