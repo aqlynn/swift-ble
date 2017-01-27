@@ -61,10 +61,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
     }
     
     //AlarmApplicationDelegate protocol
-    func playAlarmSound() {
+    func playAlarmSound(name:String,type:String) {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
         let url = URL(
-            fileURLWithPath: Bundle.main.path(forResource: "bell", ofType: "mp3")!)
+            fileURLWithPath: Bundle.main.path(forResource: name, ofType: type)!)
         
         var error: NSError?
         
@@ -87,18 +87,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
     }
     
     func application(_ application: UIApplication, didReceive notification: UILocalNotification) {
+        
         //
         //if app is in foreground, show a alert
         var s:String!
         if(Global.alarmType==0){
             s="儿童警报"
+             playAlarmSound(name: "cry",type: "mp3")
         }else if(Global.alarmType==1){
             s="防丢警报 rssi:\(Global.rssi)"
+            playAlarmSound(name: "fangdiu",type: "wav")
         }else if(Global.alarmType==2){
             s="防盗警报"
+            playAlarmSound(name: "fangdao",type: "mp3")
+
         }
-        let storageController = UIAlertController(title: s, message: nil, preferredStyle: .alert)
-        playAlarmSound()
+       
+         let storageController = UIAlertController(title: s, message: nil, preferredStyle: .alert)
         let stopOption = UIAlertAction(title: "OK", style: .default) {
             (action:UIAlertAction)->Void in
 //            guard(!Global.isOnAlarm)else{

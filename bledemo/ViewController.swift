@@ -18,30 +18,7 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title="首页"
-        btn0.layer.cornerRadius = 20;
-        btn0.layer.masksToBounds = true;
-        btn0.layer.borderWidth = 1.0;
-        btn0.layer.borderColor = UIColor.green.cgColor
-        
-        btn1.layer.cornerRadius = 20;
-        btn1.layer.masksToBounds = true;
-        btn1.layer.borderWidth = 1.0;
-        btn1.layer.borderColor = UIColor.green.cgColor
-
-        
-        btn2.layer.cornerRadius = 20;
-        btn2.layer.masksToBounds = true;
-        btn2.layer.borderWidth = 1.0;
-        btn2.layer.borderColor = UIColor.green.cgColor
-
-        
-        btn3.layer.cornerRadius = 20;
-        btn3.layer.masksToBounds = true;
-        btn3.layer.borderWidth = 1.0;
-        btn3.layer.borderColor = UIColor.green.cgColor
-        
         bleSingleton = BleSingleton.shareBleSingleton()
-    
         self.bleSingleton.delegate = self
 
 
@@ -50,6 +27,35 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.bleSingleton.vc = self
+        switch Global.tuple.type {
+        case 0:
+            initBtns()
+            if(Global.tuple.isOn)
+            {
+                btn0.backgroundColor=UIColor.green
+                btn0.setTitleColor(.white, for: .normal)
+            }
+        case 1:
+             initBtns()
+            if(Global.tuple.isOn)
+            {
+                btn1.backgroundColor=UIColor.green
+                btn1.setTitleColor(.white, for: .normal)
+
+            }
+        case 2:
+            initBtns()
+            if(Global.tuple.isOn)
+            {
+                btn2.backgroundColor=UIColor.green
+                btn2.setTitleColor(.white, for: .normal)
+
+            }
+        default:
+            initBtns()
+            break
+        }
+        
     }
     
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -85,7 +91,36 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     }
     
     
+    func initBtns(){
+    btn0.layer.cornerRadius = 20;
+    btn0.backgroundColor=nil
+    btn0.layer.masksToBounds = true;
+    btn0.layer.borderWidth = 1.0;
+    btn0.layer.borderColor = UIColor.green.cgColor
+    btn0.setTitleColor(.green, for: .normal)
 
+    btn1.backgroundColor=nil
+    btn1.layer.cornerRadius = 20;
+    btn1.layer.masksToBounds = true;
+    btn1.layer.borderWidth = 1.0;
+    btn1.layer.borderColor = UIColor.green.cgColor
+    btn1.setTitleColor(.green, for: .normal)
+    
+    btn2.backgroundColor=nil
+    btn2.layer.cornerRadius = 20;
+    btn2.layer.masksToBounds = true;
+    btn2.layer.borderWidth = 1.0;
+    btn2.layer.borderColor = UIColor.green.cgColor
+    btn2.setTitleColor(.green, for: .normal)
+    
+    btn3.backgroundColor=nil
+    btn3.layer.cornerRadius = 20;
+    btn3.layer.masksToBounds = true;
+    btn3.layer.borderWidth = 1.0;
+    btn3.layer.borderColor = UIColor.green.cgColor
+    btn3.setTitleColor(.green, for: .normal)
+
+    }
 
 }
 

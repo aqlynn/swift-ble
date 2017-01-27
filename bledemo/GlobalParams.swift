@@ -18,4 +18,5 @@ class Global
     static var weekdays: [Int] = [Int]()
     static var mediaLabel: String = "bell"
     static var snoozeEnabled: Bool = false
+    static var tuple: (type:Int,isOn:Bool) = (-1,false)
 }

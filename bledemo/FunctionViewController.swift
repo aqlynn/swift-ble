@@ -13,12 +13,20 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var labelFunction: UILabel!
     @IBOutlet weak var bleStatus: UILabel!
+   
+    @IBOutlet weak var funSwitch: UISwitch!
+   
+    
     var type:Int!
+    
         override func viewDidLoad() {
         super.viewDidLoad()
     
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
+             Global.tuple=(type,true)
+            funSwitch.isOn = true;
+            funSwitch.addTarget(self, action: #selector(switchDidChange), for:.valueChanged)
             if(type==1){
                  labelFunction.text="防丢系统"
                  image.image=UIImage(named: "1")
@@ -44,6 +52,16 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
 
         // Do any additional setup after loading the view.
     }
+    
+    
+    
+    func switchDidChange(){
+        //打印当前值
+        print(funSwitch.isOn)
+        Global.tuple=(type,funSwitch.isOn)
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.bleSingleton.vc = self

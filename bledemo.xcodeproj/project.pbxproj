@@ -12,6 +12,11 @@
 		364664151E38C4AB00524F91 /* GlobalParams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 364664141E38C4AB00524F91 /* GlobalParams.swift */; };
 		365C0F251E3A37C10009EF69 /* tickle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F231E3A37C10009EF69 /* tickle.mp3 */; };
 		365C0F261E3A37C10009EF69 /* bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F241E3A37C10009EF69 /* bell.mp3 */; };
+		365C0F2C1E3B976E0009EF69 /* fangdao.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F2A1E3B976D0009EF69 /* fangdao.mp3 */; };
+		365C0F2D1E3B976E0009EF69 /* fangdiu.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F2B1E3B976D0009EF69 /* fangdiu.wav */; };
+		365C0F2F1E3B97820009EF69 /* cry.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F2E1E3B97820009EF69 /* cry.mp3 */; };
+		365C0F321E3B979D0009EF69 /* btconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F301E3B979D0009EF69 /* btconnect.wav */; };
+		365C0F331E3B979D0009EF69 /* btdisconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F311E3B979D0009EF69 /* btdisconnect.wav */; };
 		367066171E38821F00B90C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066161E38821F00B90C5B /* AppDelegate.swift */; };
 		367066191E38821F00B90C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066181E38821F00B90C5B /* ViewController.swift */; };
 		3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670661D1E38821F00B90C5B /* Assets.xcassets */; };
@@ -48,6 +53,11 @@
 		364664141E38C4AB00524F91 /* GlobalParams.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalParams.swift; sourceTree = "<group>"; };
 		365C0F231E3A37C10009EF69 /* tickle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = tickle.mp3; sourceTree = "<group>"; };
 		365C0F241E3A37C10009EF69 /* bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = bell.mp3; sourceTree = "<group>"; };
+		365C0F2A1E3B976D0009EF69 /* fangdao.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = fangdao.mp3; sourceTree = "<group>"; };
+		365C0F2B1E3B976D0009EF69 /* fangdiu.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fangdiu.wav; sourceTree = "<group>"; };
+		365C0F2E1E3B97820009EF69 /* cry.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = cry.mp3; sourceTree = "<group>"; };
+		365C0F301E3B979D0009EF69 /* btconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btconnect.wav; sourceTree = "<group>"; };
+		365C0F311E3B979D0009EF69 /* btdisconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btdisconnect.wav; sourceTree = "<group>"; };
 		367066131E38821F00B90C5B /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066161E38821F00B90C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367066181E38821F00B90C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,12 +126,17 @@
 		367066151E38821F00B90C5B /* bledemo */ = {
 			isa = PBXGroup;
 			children = (
+				365C0F2A1E3B976D0009EF69 /* fangdao.mp3 */,
+				365C0F2B1E3B976D0009EF69 /* fangdiu.wav */,
 				365C0F231E3A37C10009EF69 /* tickle.mp3 */,
 				365C0F241E3A37C10009EF69 /* bell.mp3 */,
 				3670664C1E38884800B90C5B /* HexUtil.swift */,
 				367066161E38821F00B90C5B /* AppDelegate.swift */,
+				365C0F2E1E3B97820009EF69 /* cry.mp3 */,
 				364664141E38C4AB00524F91 /* GlobalParams.swift */,
 				364664101E38A46E00524F91 /* Main.storyboard */,
+				365C0F301E3B979D0009EF69 /* btconnect.wav */,
+				365C0F311E3B979D0009EF69 /* btdisconnect.wav */,
 				367066501E389A0000B90C5B /* ConnectBleViewController.swift */,
 				367066181E38821F00B90C5B /* ViewController.swift */,
 				3670661D1E38821F00B90C5B /* Assets.xcassets */,
@@ -270,9 +285,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				365C0F331E3B979D0009EF69 /* btdisconnect.wav in Resources */,
 				365C0F251E3A37C10009EF69 /* tickle.mp3 in Resources */,
 				365C0F261E3A37C10009EF69 /* bell.mp3 in Resources */,
 				364664111E38A46E00524F91 /* Main.storyboard in Resources */,
+				365C0F2F1E3B97820009EF69 /* cry.mp3 in Resources */,
+				365C0F2D1E3B976E0009EF69 /* fangdiu.wav in Resources */,
+				365C0F321E3B979D0009EF69 /* btconnect.wav in Resources */,
+				365C0F2C1E3B976E0009EF69 /* fangdao.mp3 in Resources */,
 				367066211E38821F00B90C5B /* LaunchScreen.storyboard in Resources */,
 				3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */,
 			);
@@ -452,6 +472,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 97DJTM743Q;
 				INFOPLIST_FILE = bledemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lxk.bledemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -468,6 +489,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = 97DJTM743Q;
 				INFOPLIST_FILE = bledemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = lxk.bledemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";

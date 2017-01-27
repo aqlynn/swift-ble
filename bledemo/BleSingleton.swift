@@ -8,9 +8,11 @@
 
 import Foundation
 import UIKit
+import AudioToolbox
+import AVFoundation
+var audioPlayer: AVAudioPlayer?
 
-
-class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
+class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAudioPlayerDelegate {
     
     static let instance: BleSingleton = BleSingleton()
     
@@ -69,18 +71,33 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         print("读到rssi \(RSSI)");
         Global.alarmType=1
         Global.rssi=RSSI
-        guard Int(RSSI.stringValue)! < -70 else {
-            return
-        }
         
-        let AlarmNotification: UILocalNotification = UILocalNotification()
-        AlarmNotification.alertBody = "防丢警报"
-        AlarmNotification.alertAction = "打开App"
-        AlarmNotification.category = "防丢警报"
-        AlarmNotification.soundName = "bell.mp3"
-        AlarmNotification.timeZone = TimeZone.current
-        AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
-        UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+        
+        switch Global.tuple.type {
+        case 1:
+            if(Global.tuple.isOn)
+            {
+                guard Int(RSSI.stringValue)! < -70 else {
+                    return
+                }
+                
+                let AlarmNotification: UILocalNotification = UILocalNotification()
+                AlarmNotification.alertBody = "防丢警报"
+                AlarmNotification.alertAction = "打开App"
+                AlarmNotification.category = "防丢警报"
+                AlarmNotification.soundName = "bell.mp3"
+                AlarmNotification.timeZone = TimeZone.current
+                AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+                UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+                
+            }
+        default:
+            break
+        }
+
+        
+        
+        
         
 
         
@@ -139,10 +156,12 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         case .poweredOn:
             print("蓝牙已打开, 请扫描外设!");
             Global.isConnected=false;
+            playAlarmSound(name: "btdisconnect",type: "wav")
             self.delegate?.disconnected()
             break;
         case .poweredOff:
             print("蓝牙关闭，请先打开蓝牙");
+            playAlarmSound(name: "btdisconnect",type: "wav")
             Global.isConnected=false;
             self.delegate?.disconnected()
         default:
@@ -190,6 +209,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         self.myPeripheral.discoverServices(nil)
         print("扫描服务...");
          self.delegate?.connected()
+        playAlarmSound(name: "btconnect",type: "wav")
         Global.isConnected=true;
     }
     
@@ -307,20 +327,31 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
             }else if(d[2]==02){
                 //acceleration
                 
-                print("----翻动异常---")
-                guard(!Global.isOnAlarm)else{
-                    return
+                switch Global.tuple.type {
+                case 2:
+                    if(Global.tuple.isOn)
+                    {
+                        print("----翻动异常---")
+                        guard(!Global.isOnAlarm)else{
+                            return
+                        }
+                        Global.alarmType=2
+                        Global.isOnAlarm=true
+                        let AlarmNotification: UILocalNotification = UILocalNotification()
+                        AlarmNotification.alertBody = "防盗警报"
+                        AlarmNotification.alertAction = "打开App"
+                        AlarmNotification.category = "防盗警报"
+                        AlarmNotification.timeZone = TimeZone.current
+                        AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+                        UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+
+                    }
+                default:
+                    break
                 }
-                Global.alarmType=2
-                Global.isOnAlarm=true
-                let AlarmNotification: UILocalNotification = UILocalNotification()
-                AlarmNotification.alertBody = "防盗警报"
-                AlarmNotification.alertAction = "打开App"
-                AlarmNotification.category = "防盗警报"
-                AlarmNotification.timeZone = TimeZone.current
-                AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
-                UIApplication.shared.scheduleLocalNotification(AlarmNotification)
-            
+
+                
+                
 //                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
 //                vc2.type="防盗系统 当前rssi:\(Global.rssi)"
 //                //跳转
@@ -328,21 +359,34 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
 
 
             }else if(d[1]==01){
-                //button
-                print("----蓝牙按键---")
-            
-                guard(!Global.isOnAlarm)else{
-                    return
+                switch Global.tuple.type {
+                case 0:
+                    if(Global.tuple.isOn)
+                    {
+                        //button
+                        print("----蓝牙按键---")
+                        
+                        guard(!Global.isOnAlarm)else{
+                            return
+                        }
+                        Global.alarmType=0
+                        Global.isOnAlarm=true
+                        let AlarmNotification: UILocalNotification = UILocalNotification()
+                        AlarmNotification.alertBody = "儿童安全警报"
+                        AlarmNotification.alertAction = "打开App"
+                        AlarmNotification.category = "儿童安全警报"
+                        AlarmNotification.timeZone = TimeZone.current
+                        AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
+                        UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+
+                    }
+                default:
+                    break
                 }
-                Global.alarmType=0
-                Global.isOnAlarm=true
-                let AlarmNotification: UILocalNotification = UILocalNotification()
-                AlarmNotification.alertBody = "儿童安全警报"
-                AlarmNotification.alertAction = "打开App"
-                AlarmNotification.category = "儿童安全警报"
-                AlarmNotification.timeZone = TimeZone.current
-                AlarmNotification.fireDate = Date(timeIntervalSinceNow: 0)
-                UIApplication.shared.scheduleLocalNotification(AlarmNotification)
+                
+                
+                
+                
                 
 //                let vc2 = (vc.storyboard?.instantiateViewController(withIdentifier: "alarm")) as! AlarmViewController
 //                vc2.type="儿童安全 当前rssi:\(Global.rssi)"
@@ -371,10 +415,47 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate {
         }
     }
     
-
+    
+    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully
+        flag: Bool) {
+    }
+    
+    func audioPlayerDecodeErrorDidOccur(_ player: AVAudioPlayer,
+                                        error: Error?) {
+    }
+    
+    func audioPlayerBeginInterruption(_ player: AVAudioPlayer) {
+    }
+    
+    //AlarmApplicationDelegate protocol
+    func playAlarmSound(name:String,type:String) {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        let url = URL(
+            fileURLWithPath: Bundle.main.path(forResource: name, ofType: type)!)
+        
+        var error: NSError?
+        
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
+        } catch let error1 as NSError {
+            error = error1
+            audioPlayer = nil
+        }
+        
+        if let err = error {
+            print("audioPlayer error \(err.localizedDescription)")
+        } else {
+            audioPlayer!.delegate = self
+            audioPlayer!.prepareToPlay()
+        }
+        //negative number means loop infinity
+        audioPlayer!.numberOfLoops = 0
+        audioPlayer!.play()
+    }
     
     
 }
+
 
 
 

@@ -285,6 +285,7 @@
                     </view>
                     <connections>
                         <outlet property="bleStatus" destination="f82-YX-W6c" id="SLy-6g-8FC"/>
+                        <outlet property="funSwitch" destination="dYu-Eh-41m" id="6in-rw-Ax1"/>
                         <outlet property="image" destination="tgo-o2-nvf" id="knJ-Sk-89j"/>
                         <outlet property="labelFunction" destination="Rj5-64-1g0" id="bGE-fO-aJt"/>
                     </connections>
