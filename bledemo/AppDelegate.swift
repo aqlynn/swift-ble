@@ -137,7 +137,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
 //            vc2.type="儿童安全 当前rssi:\(Global.rssi)"
 //            self.window?.rootViewController!.present(vc2, animated: true, completion: nil)
             self.audioPlayer?.stop()
-            Global.isOnAlarm=true
+            Global.isOnAlarm=false
             
         }
         storageController.addAction(stopOption)

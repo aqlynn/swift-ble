@@ -80,6 +80,12 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAud
                 guard Int(RSSI.stringValue)! < -70 else {
                     return
                 }
+                guard(!Global.isOnAlarm)else{
+                    return
+                }
+                Global.alarmType=1
+                Global.isOnAlarm=true
+
                 
                 let AlarmNotification: UILocalNotification = UILocalNotification()
                 AlarmNotification.alertBody = "防丢警报"
