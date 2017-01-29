@@ -18,6 +18,7 @@
 		365C0F321E3B979D0009EF69 /* btconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F301E3B979D0009EF69 /* btconnect.wav */; };
 		365C0F331E3B979D0009EF69 /* btdisconnect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 365C0F311E3B979D0009EF69 /* btdisconnect.wav */; };
 		3663EA8C1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663EA8B1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift */; };
+		3663EA8E1E3E31C90053C3CC /* SettingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3663EA8D1E3E31C80053C3CC /* SettingTableViewController.swift */; };
 		367066171E38821F00B90C5B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066161E38821F00B90C5B /* AppDelegate.swift */; };
 		367066191E38821F00B90C5B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066181E38821F00B90C5B /* ViewController.swift */; };
 		3670661E1E38821F00B90C5B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3670661D1E38821F00B90C5B /* Assets.xcassets */; };
@@ -27,6 +28,8 @@
 		3670664D1E38884800B90C5B /* HexUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3670664C1E38884800B90C5B /* HexUtil.swift */; };
 		367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066501E389A0000B90C5B /* ConnectBleViewController.swift */; };
 		367066531E389C5600B90C5B /* BatteryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367066521E389C5600B90C5B /* BatteryView.swift */; };
+		367C81BE1E3E5A0B00A67930 /* ImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C81BD1E3E5A0B00A67930 /* ImageViewController.swift */; };
+		367C81C01E3E6C7700A67930 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367C81BF1E3E6C7700A67930 /* Meal.swift */; };
 		3696BAF01E39AA8D002BF100 /* BleSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */; };
 		3696BAF21E39FFCD002BF100 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3696BAF11E39FFCD002BF100 /* AlarmViewController.swift */; };
 /* End PBXBuildFile section */
@@ -60,6 +63,7 @@
 		365C0F301E3B979D0009EF69 /* btconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btconnect.wav; sourceTree = "<group>"; };
 		365C0F311E3B979D0009EF69 /* btdisconnect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = btdisconnect.wav; sourceTree = "<group>"; };
 		3663EA8B1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DynamicMaskSegmentSwitch.swift; sourceTree = "<group>"; };
+		3663EA8D1E3E31C80053C3CC /* SettingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingTableViewController.swift; sourceTree = "<group>"; };
 		367066131E38821F00B90C5B /* bledemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bledemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		367066161E38821F00B90C5B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		367066181E38821F00B90C5B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -76,6 +80,8 @@
 		3670664C1E38884800B90C5B /* HexUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexUtil.swift; sourceTree = "<group>"; };
 		367066501E389A0000B90C5B /* ConnectBleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConnectBleViewController.swift; path = ../ConnectBleViewController.swift; sourceTree = "<group>"; };
 		367066521E389C5600B90C5B /* BatteryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BatteryView.swift; sourceTree = "<group>"; };
+		367C81BD1E3E5A0B00A67930 /* ImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewController.swift; sourceTree = "<group>"; };
+		367C81BF1E3E6C7700A67930 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
 		3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BleSingleton.swift; sourceTree = "<group>"; };
 		3696BAF11E39FFCD002BF100 /* AlarmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -128,6 +134,7 @@
 		367066151E38821F00B90C5B /* bledemo */ = {
 			isa = PBXGroup;
 			children = (
+				367C81BF1E3E6C7700A67930 /* Meal.swift */,
 				365C0F2A1E3B976D0009EF69 /* fangdao.mp3 */,
 				365C0F2B1E3B976D0009EF69 /* fangdiu.wav */,
 				365C0F231E3A37C10009EF69 /* tickle.mp3 */,
@@ -150,6 +157,8 @@
 				364664121E38BD3B00524F91 /* FunctionViewController.swift */,
 				3696BAEF1E39AA8D002BF100 /* BleSingleton.swift */,
 				3696BAF11E39FFCD002BF100 /* AlarmViewController.swift */,
+				3663EA8D1E3E31C80053C3CC /* SettingTableViewController.swift */,
+				367C81BD1E3E5A0B00A67930 /* ImageViewController.swift */,
 			);
 			path = bledemo;
 			sourceTree = "<group>";
@@ -324,13 +333,16 @@
 			files = (
 				364664131E38BD3C00524F91 /* FunctionViewController.swift in Sources */,
 				364664151E38C4AB00524F91 /* GlobalParams.swift in Sources */,
+				367C81C01E3E6C7700A67930 /* Meal.swift in Sources */,
 				367066191E38821F00B90C5B /* ViewController.swift in Sources */,
 				3696BAF01E39AA8D002BF100 /* BleSingleton.swift in Sources */,
 				367066531E389C5600B90C5B /* BatteryView.swift in Sources */,
 				3696BAF21E39FFCD002BF100 /* AlarmViewController.swift in Sources */,
+				3663EA8E1E3E31C90053C3CC /* SettingTableViewController.swift in Sources */,
 				367066511E389A0000B90C5B /* ConnectBleViewController.swift in Sources */,
 				3670664D1E38884800B90C5B /* HexUtil.swift in Sources */,
 				367066171E38821F00B90C5B /* AppDelegate.swift in Sources */,
+				367C81BE1E3E5A0B00A67930 /* ImageViewController.swift in Sources */,
 				3663EA8C1E3BC0F70053C3CC /* DynamicMaskSegmentSwitch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

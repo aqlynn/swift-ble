@@ -20,8 +20,6 @@ class ViewController: UIViewController,BleSingletonDelegate  {
         self.navigationItem.title="首页"
         bleSingleton = BleSingleton.shareBleSingleton()
         self.bleSingleton.delegate = self
-
-
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +58,7 @@ class ViewController: UIViewController,BleSingletonDelegate  {
     
        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
-            let vc:FunctionViewController = segue.destination as! FunctionViewController
+            let vc = segue.destination as! FunctionViewController
             switch identifier {
             case "child":
                 vc.type = 0;

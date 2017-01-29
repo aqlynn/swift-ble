@@ -361,11 +361,52 @@
                         <outlet property="strengthStack" destination="Zln-UI-5Xz" id="Kiw-NF-EsZ"/>
                         <outlet property="vibrate" destination="HvZ-rA-VYC" id="X86-ll-mWJ"/>
                         <outlet property="volume" destination="CjG-Na-j5i" id="Rq9-oi-i0w"/>
+                        <segue destination="AJ5-dJ-l2a" kind="show" identifier="setting" id="Xsp-OA-YX2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDQ-Ad-Pi1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1781" y="-553"/>
+        </scene>
+        <!--Setting Table View Controller-->
+        <scene sceneID="ul1-Nh-eQe">
+            <objects>
+                <tableViewController id="AJ5-dJ-l2a" customClass="SettingTableViewController" customModule="bledemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="3Cd-Rw-rrX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="reuseIdentifier" textLabel="cif-d2-8lp" style="IBUITableViewCellStyleDefault" id="fjg-F2-zlQ">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="fjg-F2-zlQ" id="FP8-KQ-jaE">
+                                    <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="cif-d2-8lp">
+                                            <rect key="frame" x="15" y="0.0" width="270" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AJ5-dJ-l2a" id="OJP-d9-Dz6"/>
+                            <outlet property="delegate" destination="AJ5-dJ-l2a" id="YNw-Bv-asn"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="JYQ-ye-IuD" kind="show" identifier="ShowPhotoView" id="JcX-8x-obD"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PhW-om-dWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2629" y="-554"/>
         </scene>
         <!--Alarm View Controller-->
         <scene sceneID="7n2-9R-rbQ">
@@ -430,11 +471,73 @@
             </objects>
             <point key="canvasLocation" x="117.59999999999999" y="-590.55472263868069"/>
         </scene>
+        <!--图片选择-->
+        <scene sceneID="fcv-SD-xoD">
+            <objects>
+                <viewController id="JYQ-ye-IuD" customClass="ImageViewController" customModule="bledemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="egA-St-sV9"/>
+                        <viewControllerLayoutGuide type="bottom" id="dDE-Uk-h0J"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T3u-YY-fMc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ZTv-WY-aJl">
+                                <rect key="frame" x="16" y="84" width="288" height="288"/>
+                                <subviews>
+                                    <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="320" placeholderIntrinsicHeight="320" image="defaultPhoto" translatesAutoresizingMaskIntoConstraints="NO" id="2lS-fN-iCp">
+                                        <rect key="frame" x="0.0" y="0.0" width="288" height="288"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2lS-fN-iCp" secondAttribute="height" multiplier="1:1" id="FHx-4S-jZd"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="48K-RQ-0YJ" appends="YES" id="pgA-yA-rGR"/>
+                                        </connections>
+                                    </imageView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ZTv-WY-aJl" secondAttribute="trailing" id="34M-jR-S85"/>
+                            <constraint firstItem="ZTv-WY-aJl" firstAttribute="leading" secondItem="T3u-YY-fMc" secondAttribute="leadingMargin" id="TIn-nF-fyu"/>
+                            <constraint firstItem="ZTv-WY-aJl" firstAttribute="top" secondItem="egA-St-sV9" secondAttribute="bottom" constant="20" id="zQ4-jH-BFj"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="图片选择" id="r7f-f2-c75">
+                        <barButtonItem key="leftBarButtonItem" title="取消" id="jof-ac-WRv">
+                            <connections>
+                                <action selector="cancel:" destination="JYQ-ye-IuD" id="QaJ-mS-8nd"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="保存" id="5Kl-uH-ipG">
+                            <connections>
+                                <action selector="save:" destination="JYQ-ye-IuD" id="bRN-p8-lld"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="photoimageview" destination="2lS-fN-iCp" id="KUR-NZ-gKA"/>
+                        <outlet property="saveButton" destination="5Kl-uH-ipG" id="2pA-Xw-H1Z"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67S-kI-NAm" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="48K-RQ-0YJ">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="JYQ-ye-IuD" id="kRD-3q-b9C"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3379" y="-554"/>
+        </scene>
     </scenes>
     <resources>
         <image name="3" width="172" height="185"/>
         <image name="7" width="360" height="415"/>
         <image name="8" width="360" height="430"/>
+        <image name="defaultPhoto" width="1080" height="1080"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="i9H-QB-XTU"/>

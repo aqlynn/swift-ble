@@ -27,6 +27,8 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
         override func viewDidLoad() {
         super.viewDidLoad()
 
+            
+            self.navigationItem.rightBarButtonItem=UIBarButtonItem(image:UIImage(named:"5"), style:.plain , target: self, action: #selector(FunctionViewController.sayHello(sender:)))
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
              Global.tuple=(type,true)
@@ -36,7 +38,7 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
             
             funSwitch.isOn = true;
     
-            funSwitch.addTarget(self, action: #selector(switchDidChange), for:.valueChanged)
+            funSwitch.addTarget(self, action:#selector(FunctionViewController.switchDidChange(sender:)), for:.valueChanged)
             vibrate.addTarget(self, action: #selector(switchDidChange2), for:.valueChanged)
             
             if(type==1){
@@ -75,14 +77,24 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
            
     }
     
+
+    func sayHello(sender: UIBarButtonItem) {
+         self.performSegue(withIdentifier: "setting", sender: self)
+    }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if(segue.identifier=="setting"){
+//            var vc=segue.destination as! SettingTableViewController
+//        }
+    }
     
-    func switchDidChange(){
+    func switchDidChange(sender:UISwitch){
         //打印当前值
-       // print(funSwitch.isOn)
+        print(sender.isOn)
         Global.tuple=(type,funSwitch.isOn)
     }
     
+
     
     //vibrate
     func switchDidChange2(){
