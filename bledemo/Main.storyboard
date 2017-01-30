@@ -247,19 +247,19 @@
                                 <rect key="frame" x="80" y="110" width="160" height="146"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="JEi-Zt-i1T">
-                                <rect key="frame" x="15" y="264" width="295" height="106"/>
+                                <rect key="frame" x="15" y="264" width="295" height="105"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="l8y-08-M2y">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="儿童安全" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rj5-64-1g0">
-                                                <rect key="frame" x="0.0" y="2" width="148" height="32"/>
+                                                <rect key="frame" x="0.0" y="2" width="147.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-Eh-41m">
-                                                <rect key="frame" x="148" y="2" width="149" height="31"/>
+                                                <rect key="frame" x="147.5" y="2" width="149.5" height="31"/>
                                             </switch>
                                         </subviews>
                                         <constraints>
@@ -272,18 +272,18 @@
                                         <rect key="frame" x="0.0" y="35" width="295" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="音量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TT9-82-B5K">
-                                                <rect key="frame" x="0.0" y="2" width="130" height="32"/>
+                                                <rect key="frame" x="0.0" y="2" width="130" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CjG-Na-j5i">
-                                                <rect key="frame" x="128" y="3" width="169" height="31"/>
-                                                <color key="tintColor" red="0.27696147561073303" green="0.68082809448242188" blue="0.31634753942489624" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <rect key="frame" x="128" y="2.5" width="169" height="31"/>
+                                                <color key="tintColor" red="0.35061171650886536" green="0.87739765644073486" blue="0.66236162185668945" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="165" id="hdb-0K-2Vx"/>
                                                 </constraints>
-                                                <color key="thumbTintColor" red="0.31434136629104614" green="0.76330810785293579" blue="0.35396581888198853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="thumbTintColor" red="0.34901960784313724" green="0.8784313725490196" blue="0.14901960784313725" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="volumeChanged:" destination="afr-cj-tys" eventType="valueChanged" id="sRJ-On-Knu"/>
                                                 </connections>
@@ -294,16 +294,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7TR-7a-bDX">
-                                        <rect key="frame" x="0.0" y="70" width="295" height="36"/>
+                                        <rect key="frame" x="0.0" y="70" width="295" height="35"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="震动" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pPY-ms-hSJ">
-                                                <rect key="frame" x="0.0" y="2" width="148" height="32"/>
+                                                <rect key="frame" x="0.0" y="2" width="147.5" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HvZ-rA-VYC">
-                                                <rect key="frame" x="148" y="2" width="149" height="31"/>
+                                                <rect key="frame" x="147.5" y="2" width="149.5" height="31"/>
                                             </switch>
                                         </subviews>
                                         <constraints>
@@ -315,16 +315,16 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Zln-UI-5Xz">
-                                <rect key="frame" x="15" y="378" width="296" height="28"/>
+                                <rect key="frame" x="15" y="377" width="295.5" height="28"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="报警信号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vjr-cy-PlX">
-                                        <rect key="frame" x="0.0" y="0.0" width="102" height="28"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="101.5" height="28"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VuL-Wy-VMo">
-                                        <rect key="frame" x="117" y="-1" width="179" height="29"/>
+                                        <rect key="frame" x="116.5" y="0.0" width="179" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="179" id="8em-iC-23h"/>
                                             <constraint firstAttribute="height" constant="28" id="LcO-o0-RD1"/>
@@ -334,7 +334,7 @@
                                             <segment title="中"/>
                                             <segment title="强"/>
                                         </segments>
-                                        <color key="tintColor" red="0.12941176469999999" green="0.98823529409999999" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.39947912099999999" green="0.95576280359999999" blue="0.4889529943" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="segmentClick:" destination="afr-cj-tys" eventType="valueChanged" id="Lhg-gx-bKp"/>
                                         </connections>
@@ -466,9 +466,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wEB-lS-dNR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="n8P-Br-cDd">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="n8P-Br-cDd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.1449514627456665" green="0.47130030393600464" blue="0.64071124792098999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

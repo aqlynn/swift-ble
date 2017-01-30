@@ -17,6 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate,AVAudioPlayerDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+//        UINavigationBar.appearance().barTintColor = UIColor(red: 234.0/255.0, green: 46.0/255.0, blue: 73.0/255.0, alpha: 1.0)
+       // UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName : UIColor(red: 37.0/255.0, green: 129.0/255.0, blue: 163.0/255.0, alpha: 1.0)]
         return true
     }
 
