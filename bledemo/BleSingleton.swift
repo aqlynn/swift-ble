@@ -80,7 +80,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAud
                 guard Int(RSSI.stringValue)! < -80 else {
                     return
                 }
-                               var b:Bool=false
+                var b:Bool=false
                 if(Int(RSSI.stringValue)! <= -100){
                     b=true
                 }
@@ -88,7 +88,7 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAud
                     b=true
                 }
                 
-                if(Global.strength==2&&(Int(RSSI.stringValue)! > -90&&Int(RSSI.stringValue)! <= -80)||Int(RSSI.stringValue)! <= -90){
+                if(Global.strength==2&&((Int(RSSI.stringValue)! > -90&&Int(RSSI.stringValue)! <= -80)||Int(RSSI.stringValue)! <= -90)){
                     b=true
                 }
                 guard b else {

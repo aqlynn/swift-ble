@@ -27,9 +27,7 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     
         override func viewDidLoad() {
         super.viewDidLoad()
-
-            strengthSegment.selectedSegmentIndex = 1
-             Global.strength=1
+             strengthSegment.selectedSegmentIndex=Global.strength
             self.navigationItem.rightBarButtonItem=UIBarButtonItem(image:UIImage(named:"5"), style:.plain , target: self, action: #selector(FunctionViewController.sayHello(sender:)))
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
