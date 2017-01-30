@@ -20,21 +20,21 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
     
     @IBOutlet weak var vibrate: UISwitch!
 
+    @IBOutlet weak var strengthSegment: UISegmentedControl!
     var type:Int!
     
     @IBOutlet weak var strengthStack: UIStackView!
-    @IBOutlet weak var strengchSwitch: DynamicMaskSegmentSwitch!
+    
         override func viewDidLoad() {
         super.viewDidLoad()
 
-            
+            strengthSegment.selectedSegmentIndex = 1
+             Global.strength=1
             self.navigationItem.rightBarButtonItem=UIBarButtonItem(image:UIImage(named:"5"), style:.plain , target: self, action: #selector(FunctionViewController.sayHello(sender:)))
             bleSingleton = BleSingleton.shareBleSingleton()
             self.bleSingleton.delegate = self
              Global.tuple=(type,true)
         
-            let configure = DynamicMaskSegmentSwitchConfigure(highlightedColor: UIColor(red: 80.0/255.0, green: 195.0/255.0, blue: 90.0/255.0, alpha: 1.0), normalColor: UIColor.white, items: ["弱","中","强"])
-            strengchSwitch.configure = configure
             
             funSwitch.isOn = true;
     
@@ -82,6 +82,25 @@ class FunctionViewController: UIViewController,BleSingletonDelegate {
          self.performSegue(withIdentifier: "setting", sender: self)
     }
     
+    @IBAction func segmentClick(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex
+        {
+        case 0:
+            Global.strength=0
+            break
+            
+        case 1:
+             Global.strength=1
+            break
+        case 2:
+            Global.strength=2
+            break
+        default:
+             Global.strength=1
+            break; 
+        }
+        
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 //        if(segue.identifier=="setting"){
 //            var vc=segue.destination as! SettingTableViewController

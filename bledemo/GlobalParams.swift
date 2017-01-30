@@ -26,7 +26,7 @@ class Global
     static var vibrate1:Bool = true
     static var vibrate2:Bool = true
     
-    static var strength:Float = 0.5
+    static var strength:Int = 1
 
 
 }

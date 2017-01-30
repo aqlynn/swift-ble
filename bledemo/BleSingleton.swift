@@ -77,7 +77,21 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAud
         case 1:
             if(Global.tuple.isOn)
             {
-                guard Int(RSSI.stringValue)! < -70 else {
+                guard Int(RSSI.stringValue)! < -80 else {
+                    return
+                }
+                               var b:Bool=false
+                if(Int(RSSI.stringValue)! <= -100){
+                    b=true
+                }
+                if(Global.strength==1&&Int(RSSI.stringValue)! <= -90){
+                    b=true
+                }
+                
+                if(Global.strength==2&&(Int(RSSI.stringValue)! > -90&&Int(RSSI.stringValue)! <= -80)||Int(RSSI.stringValue)! <= -90){
+                    b=true
+                }
+                guard b else {
                     return
                 }
                 guard(!Global.isOnAlarm)else{
@@ -85,8 +99,8 @@ class BleSingleton: NSObject,CBCentralManagerDelegate,CBPeripheralDelegate,AVAud
                 }
                 Global.alarmType=1
                 Global.isOnAlarm=true
-
                 
+
                 let AlarmNotification: UILocalNotification = UILocalNotification()
                 AlarmNotification.alertBody = "防丢警报"
                 AlarmNotification.alertAction = "打开App"
